@@ -7,8 +7,14 @@ public class LoaderHome : MonoBehaviour
     [Header("Игрок")]
     [SerializeField] private FSMScripts.FsmPlayer Player;
 
-    private void Awake() //Потом добавить старт для экрана загрузки
+    [Space(7)]
+
+    [Header("База данных")]
+    [SerializeField] private Data.StartData Data;
+
+    private void Start()
     {
+        Data.Initialize();
         Player.Initialize();
     }
 }
