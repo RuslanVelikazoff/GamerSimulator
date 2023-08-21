@@ -6,11 +6,11 @@ namespace FSMScripts
     {
 
 
-        public FsmStateRun(Fsm fsm, Transform transform, float speed) : base(fsm, transform, speed) { }
+        public FsmStateRun(Fsm fsm, Rigidbody rigidbody, float speed) : base(fsm, rigidbody, speed) { }
 
         public override void Update()
         {
-            Debug.Log($"Run state [UPDATE] with speed: {Speed}");
+            //Debug.Log($"Run state [UPDATE] with speed: {Speed}");
 
             var inputDirection = ReadInput();
 

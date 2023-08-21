@@ -4,12 +4,12 @@ namespace FSMScripts
 {
     public class FsmStateMovement : FsmState
     {
-        protected readonly Transform Transform;
+        protected readonly Rigidbody Rigidbody;
         protected readonly float Speed;
 
-        public FsmStateMovement(Fsm fsm, Transform transform, float speed) : base(fsm)
+        public FsmStateMovement(Fsm fsm, Rigidbody rigidbody, float speed) : base(fsm)
         {
-            Transform = transform;
+            Rigidbody = rigidbody;
             Speed = speed;
         }
 
@@ -25,7 +25,7 @@ namespace FSMScripts
 
         public override void Update()
         {
-            Debug.Log($"Movement ({this.GetType().Name}) state [Update] with speed: {Speed}");
+            //Debug.Log($"Movement ({this.GetType().Name}) state [Update] with speed: {Speed}");
 
             var inputDirection = ReadInput();
 
@@ -37,18 +37,18 @@ namespace FSMScripts
             Move(inputDirection);
         }
 
-        protected Vector2 ReadInput()
+        protected Vector3 ReadInput()
         {
             var inputHorizontal = Input.GetAxis("Horizontal");
             var inputVertical = Input.GetAxis("Vertical");
-            var inputDirection = new Vector2(inputHorizontal, inputVertical);
+            var inputDirection = new Vector3(inputHorizontal, 0, inputVertical);
 
             return inputDirection;
         }
 
-        protected virtual void Move(Vector2 inputDirection)
+        protected virtual void Move(Vector3 inputDirection)
         {
-            Transform.position += new Vector3(inputDirection.x, 0f, inputDirection.y) * (Speed * Time.deltaTime);
+            Rigidbody.MovePosition(Rigidbody.position + inputDirection * Speed * Time.deltaTime);
         }
     }
 }

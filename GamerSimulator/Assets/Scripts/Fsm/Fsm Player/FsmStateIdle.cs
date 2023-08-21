@@ -18,7 +18,7 @@ namespace FSMScripts
 
         public override void Update()
         {
-            Debug.Log("Idle state [Update]");
+            //Debug.Log("Idle state [Update]");
 
             if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
             {

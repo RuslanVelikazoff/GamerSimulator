@@ -351,13 +351,17 @@
 "Assets/Scripts/Data/SaveManager.cs"
 "Assets/Scripts/Data/StartData.cs"
 "Assets/Scripts/Fsm/Fsm Player/FsmPlayer.cs"
+"Assets/Scripts/Fsm/Fsm Player/FsmStateEat.cs"
 "Assets/Scripts/Fsm/Fsm Player/FsmStateIdle.cs"
 "Assets/Scripts/Fsm/Fsm Player/FsmStateMovement.cs"
 "Assets/Scripts/Fsm/Fsm Player/FsmStateRun.cs"
+"Assets/Scripts/Fsm/Fsm Player/FsmStateSleep.cs"
 "Assets/Scripts/Fsm/Fsm Player/FsmStateWalk.cs"
 "Assets/Scripts/Fsm/Fsm.cs"
 "Assets/Scripts/Fsm/FsmState.cs"
 "Assets/Scripts/Loaders/LoaderHome.cs"
+"Assets/Scripts/Stats/PlayerStats.cs"
+"Assets/Scripts/UI/HomeUIManager.cs"
 -langversion:9.0
 
 /deterministic

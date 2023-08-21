@@ -4,11 +4,11 @@ namespace FSMScripts
 {
     public class FsmStateWalk : FsmStateMovement
     {
-        public FsmStateWalk(Fsm fsm, Transform transform, float speed) : base(fsm, transform, speed) { }
+        public FsmStateWalk(Fsm fsm, Rigidbody rigidbody, float speed) : base(fsm, rigidbody, speed) { }
 
         public override void Update()
         {
-            Debug.Log($"Walk state [UPDATE] with speed: {Speed}");
+            //Debug.Log($"Walk state [UPDATE] with speed: {Speed}");
 
             var inputDirection = ReadInput();
 

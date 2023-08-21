@@ -12,9 +12,15 @@ public class LoaderHome : MonoBehaviour
     [Header("База данных")]
     [SerializeField] private Data.StartData Data;
 
+    [Space(7)]
+
+    [Header("UI")]
+    [SerializeField] private UI.HomeUIManager UIManager;
+
     private void Start()
     {
         Data.Initialize();
         Player.Initialize();
+        UIManager.Initialize();
     }
 }
