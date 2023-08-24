@@ -1,21 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace FSMScripts
 {
     public class FsmStateSleep : FsmState
     {
+        protected readonly UI.PlayerUI playerUI;
         protected readonly PlayerStats playerStats;
 
-        public FsmStateSleep(Fsm fsm, PlayerStats stats) : base(fsm)
+        public FsmStateSleep(Fsm fsm, PlayerStats stats, UI.PlayerUI UIPlayer) : base(fsm)
         {
             playerStats = stats;
+            playerUI = UIPlayer;
         }
 
         public override void Enter()
         {
             Debug.Log("Sleep state [ENTER]");
+            Sleep();
         }
 
         public override void Exit()
@@ -23,12 +24,11 @@ namespace FSMScripts
             Debug.Log("Sleep state [EXIT]");
         }
 
-        public override void Update()
+        private void Sleep()
         {
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                Fsm.SetState<FsmStateIdle>();
-            }
+            playerStats.Cheerfulness += 1;
+            playerUI.SetStatsInUI();
+            Fsm.SetState<FsmStateIdle>();
         }
     }
 }

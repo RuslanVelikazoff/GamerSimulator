@@ -16,11 +16,13 @@ public class LoaderHome : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private UI.HomeUIManager UIManager;
+    [SerializeField] private UI.PlayerUI playerUI;
 
     private void Start()
     {
         Data.Initialize();
         Player.Initialize();
+        playerUI.Initialize();
         UIManager.Initialize();
     }
 }
